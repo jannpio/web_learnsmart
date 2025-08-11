@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructor Course</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/instructor_course.css">
+</head>
+<body>
+
+<div class="d-flex vh-100 bg-light">
+  <!-- Sidebar -->
+  <aside class="sidebar d-flex flex-column align-items-center text-white p-3">
+    <img src="images/logo_white.png" alt="Logo" class="logo mb-1">
+    
+    <nav class="nav flex-column w-100 text-start">
+      <label class="sidebar-label">Menu</label>
+      <a href="instructor_dashboard.html" class="nav-link"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+      <a href="instructor_course.html" class="nav-link active"><i class="bi bi-journal-bookmark-fill me-2"></i> Course</a>
+      <a href="instructor_students.html" class="nav-link"><i class="bi bi-people-fill me-2"></i> My Students</a>
+      <a href="instructor_analytics.html" class="nav-link"><i class="bi bi-bar-chart-fill me-2"></i> Analytics</a>
+      <a href="instructor_learning-path.html" class="nav-link"><i class="bi bi-tools me-2"></i> Learning Path</a>
+    </nav>
+
+    <button class="btn btn-danger mt-auto w-100 fw-bold logout-btn">Logout</button>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="content w-100 p-4">
+    <h2 class="fw-bold mb-4">Subject Overview</h2>
+
+    <div class="subject-box">
+      <h5 class="mb-3">Criminal Jurisprudence and Procedure</h5>
+
+      <div class="mb-4">
+        <div class="section-title">Description:</div>
+        <p class="text-muted">Examines the principles of criminal law and the legal process, including investigation, trial, and sentencing.</p>
+      </div>
+
+      <div class="mb-4">
+        <div class="section-title">Learning Modules:</div>
+        <ul class="list-unstyled text-muted">
+          <li>Module 1</li>
+          <li>Module 2</li>
+          <li>Module 3</li>
+          <li>Final Quiz</li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <div class="section-title">Enrolled Students:</div>
+        <p class="text-muted">23 Students</p>
+        <button class="btn btn-outline-primary btn-sm" id="viewStudentListBtn">View List</button>
+      </div>
+
+      <div>
+        <div class="section-title">Progress Snapshot:</div>
+        <ul class="list-unstyled text-muted">
+          <li>68% Avg Completion</li>
+          <li>82% Avg Quiz Score</li>
+        </ul>
+
+        <div class="action-buttons mt-3">
+          <button class="btn btn-outline-success btn-sm me-2" id="viewAnalyticsBtn">View Analytics</button>
+          <button class="btn btn-outline-secondary btn-sm me-2" id="addModuleBtn">Add Module</button>
+          <button class="btn btn-outline-dark btn-sm" id="editInfoBtn">Edit Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<!-- View Analytics Modal -->
+<div class="modal fade" id="analyticsModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Course Analytics</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>This is a preview of course analytics. You can replace this with a chart or report.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Module Modal -->
+<div class="modal fade" id="addModuleModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Module</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addModuleForm">
+          <div class="mb-3">
+            <label class="form-label">Module Title</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Module</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Info Modal -->
+<div class="modal fade" id="editInfoModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Course Info</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editInfoForm">
+          <div class="mb-3">
+            <label class="form-label">Course Title</label>
+            <input type="text" class="form-control" value="Criminal Jurisprudence and Procedure">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="3">Examines the principles of criminal law...</textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Student List Modal -->
+<div class="modal fade" id="studentListModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Enrolled Students</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item">Student 1</li>
+          <li class="list-group-item">Student 2</li>
+          <li class="list-group-item">Student 3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/instructor_course.js"></script>
+</body>
+</html>

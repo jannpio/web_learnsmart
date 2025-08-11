@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/admin_course-management.css">
+</head>
+<body>
+
+<div class="d-flex vh-100 bg-light">
+  <!-- Sidebar -->
+  <aside class="sidebar d-flex flex-column align-items-center text-white p-3">
+    <img src="images/logo_white.png" alt="Logo" class="logo mb-1">
+
+    <nav class="nav flex-column w-100 text-start">
+      <label class="sidebar-label">Menu</label>
+      <a href="admin_dashboard.html" class="nav-link"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+      <a href="admin_course-management.html" class="nav-link active"><i class="bi bi-journal-bookmark-fill me-2"></i> Course Management</a>
+      <a href="admin_user-management.html" class="nav-link"><i class="bi bi-people-fill me-2"></i> User Management</a>
+      <a href="admin_analytics.html" class="nav-link"><i class="bi bi-bar-chart-fill me-2"></i> Analytics</a>
+      <a href="admin_content-moderation.html" class="nav-link"><i class="bi bi-tools me-2"></i> Content Moderation</a>
+    </nav>
+
+    <button class="btn btn-danger mt-auto w-100 fw-bold logout-btn">Logout</button>
+  </aside>
+
+  <!-- Content Area -->
+  <div class="content w-100 p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="fw-bold">Courses</h4>
+      <button class="create-button" onclick="createCourse()">Create</button>
+    </div>
+
+    <div class="row g-4" id="courseRow">
+      <!-- Cards dynamically inserted here -->
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/admin_course-management.js"></script>
+</body>
+</html>

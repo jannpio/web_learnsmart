@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructor Students</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/instructor_students.css">
+</head>
+<body>
+
+<div class="d-flex vh-100 bg-light">
+  <!-- Sidebar -->
+  <aside class="sidebar d-flex flex-column align-items-center text-white p-3">
+    <img src="images/logo_white.png" alt="Logo" class="logo mb-1">
+    
+    <nav class="nav flex-column w-100 text-start">
+      <label class="sidebar-label">Menu</label>
+      <a href="instructor_dashboard.html" class="nav-link"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+      <a href="instructor_course.html" class="nav-link"><i class="bi bi-journal-bookmark-fill me-2"></i> Course</a>
+      <a href="instructor_students.html" class="nav-link active"><i class="bi bi-people-fill me-2"></i> My Students</a>
+      <a href="instructor_analytics.html" class="nav-link"><i class="bi bi-bar-chart-fill me-2"></i> Analytics</a>
+      <a href="instructor_learning-path.html" class="nav-link"><i class="bi bi-tools me-2"></i> Learning Path</a>
+    </nav>
+
+    <button class="btn btn-danger mt-auto w-100 fw-bold logout-btn">Logout</button>
+  </aside>
+
+  <!-- Content -->
+    <div class="content w-100">
+      <h3 class="fw-bold mb-3">My Students</h3>
+
+      <div class="search-filter">
+        <input type="text" class="form-control" placeholder="Search" style="max-width: 200px;">
+        <select class="form-select" style="max-width: 140px;">
+          <option>Role</option>
+        </select>
+        <select class="form-select" style="max-width: 140px;">
+          <option>Status</option>
+        </select>
+        <select class="form-select" style="max-width: 140px;">
+          <option>Date</option>
+        </select>
+        <div class="ms-auto d-flex gap-2">
+          <button class="btn btn-outline-primary">Export</button>
+          <button class="btn btn-primary">+ Add User</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th><input type="checkbox"></th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Avg Time</th>
+              <th>Risk Level</th>
+              <th>Path Assigned</th>
+              <th>Last Active</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample rows -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>John Smith</td>
+              <td>john.smith@admin.com</td>
+              <td>0h 10m</td>
+              <td>Normal</td>
+              <td>Memory Boost</td>
+              <td>1 minute ago</td>
+              <td>
+                <i class="bi bi-pencil-square text-primary me-2"></i>
+                <i class="bi bi-trash text-danger"></i>
+              </td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <div>
+            Rows per page
+            <select class="form-select d-inline-block w-auto">
+              <option>10</option>
+              <option>20</option>
+              <option>50</option>
+            </select>
+            of 140 rows
+          </div>
+          <nav>
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link">&laquo;</a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">...</a></li>
+              <li class="page-item"><a class="page-link" href="#">10</a></li>
+              <li class="page-item"><a class="page-link">&raquo;</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

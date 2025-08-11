@@ -1,0 +1,36 @@
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.left-panel {
+  background: linear-gradient(15deg, #2EC0E5, #145DA0);
+}
+
+.right-panel {
+  background-color: #ffffff;
+}
+
+.logo-img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  max-width: 500px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.submit-btn {
+  background-color: #2EC0E5;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
